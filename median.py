@@ -39,10 +39,12 @@ def find_median(list_one, list_two):
     length = len(sorted_list)
     if length > 1 and length % 2 == 0:
         # TODO int(length/2 - 1) good?
-        #print(length/2 - 1) # DEBUG
-        #print(length/2) # DEBUG
-        center_one = sorted_list[int(length/2 - 1)]
-        center_two = sorted_list[int(length/2)]
+        # print(length/2 - 1) # DEBUG
+        # print(length/2) # DEBUG
+        #test = length // 2
+
+        center_one = sorted_list[length // 2 - 1]
+        center_two = sorted_list[length // 2]
 
         result = (center_one + center_two) / 2.0
     return result
@@ -50,15 +52,22 @@ def find_median(list_one, list_two):
 
 def main():
     """
-Даны два отсортированных числовых массива одинаковой длины N.
-Найдите медиану числового массива длины 2N, содержащего все числа из двух данных массивов.
+    Given two sorted numeric array of the same length N. Find the median of the numerical array of length 2N,
+    containing all the numbers of the two data sets.
+
+    Sample input:
+    1 2 3 4
+    1 4 5 6
+
+    Example output:
+    3.5
     """
     list_one = [1, 2, 3, 4]
     list_two = [1, 4, 5, 6]
 
     print(list_one)
     print(list_two)
-    print("The correct result: 3.5, my result: {}".format( find_median(list_one, list_two) ))
+    print("The correct result: 3.5, my result: {}".format(find_median(list_one, list_two)))
     print("Done")
 
 
