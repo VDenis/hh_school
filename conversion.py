@@ -1,30 +1,23 @@
+from math import log2
+
 __author__ = 'Denis'
-
-
-def conversion(switch, num):
-    if switch == 1:
-        return num + 1
-    elif switch == 2:
-        return num + 2
-    elif switch == 3:
-        return 2 * num
 
 
 def find_count_conversions(n, m):
     """Function"""
 
-    if not (0 <= n <= m and m <= pow(10, 15)):
+    if not (0 <= n <= m <= pow(10, 15)):
         print("Error! Invalid input n, m")
         return
 
-    # TODO write to end
-    # TODO check
+    # TODO more accurate round
+    coeff1 = int(log2(m / n))
 
-    stage = 3
+    temp = m - pow(2, coeff1) * n
 
-    while stage > 0:
-        quotient = m / conversion(stage, n)
-        remainder = m % conversion(stage, n)
+    coeff2 = int(temp / 2)
+    coeff3 = int(temp % 2)
+    return coeff1 + coeff2 + coeff3
 
 
 def main():
