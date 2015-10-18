@@ -1,7 +1,7 @@
 # HH School 2015
 
-## Задачи:
+## Tasks:
 
-1. Медиана
+1. Median
 
-2. Преобразования
+2. Conversion
