@@ -13,7 +13,7 @@ class TestMedian(TestCase):
     def test_2(self):
         list_one = []
         list_two = []
-        self.assertEqual(find_median(list_one, list_two), 0.0, "Good")
+        self.assertEqual(find_median(list_one, list_two), None, "Good")
 
     def test_3(self):
         list_one = [1]
@@ -23,4 +23,4 @@ class TestMedian(TestCase):
     def test_4(self):
         list_one = [1]
         list_two = [1, 4]
-        self.assertEqual(find_median(list_one, list_two), 0.0, "Good")
+        self.assertEqual(find_median(list_one, list_two), None, "Good")
