@@ -4,7 +4,6 @@ __author__ = 'Denis'
 
 
 # TODO refactoring
-# TODO read from file
 
 def find_count_conversions(n, m):
     """
@@ -58,6 +57,18 @@ def main():
 
     n = 5
     m = 13
+
+    file_name = "conversion_input.txt"
+
+    # Check that file exist
+    try:
+        with open(file_name) as file:
+            input_str = file.readline().split(",")
+            input_str = list(map(int, input_str))
+            n, m = input_str[0], input_str[1]
+    # ValueError, TypeError
+    except FileNotFoundError:
+        print("File '{}' doesn't exist, using default arrays ".format(file_name))
 
     print("n = {}".format(n))
     print("m = {}".format(m))

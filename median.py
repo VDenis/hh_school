@@ -2,11 +2,11 @@ __author__ = 'Denis'
 
 
 # TODO refactoring
-# TODO read from file
+# TODO documentation
 
 def merge_two_lists(list_one, list_two):
     """
-    Function merge two lists: list_one and list_two in sorted order into mergedlist.
+    Function merge two lists in sorted order into merged list.
     Copy lists by value.
     :param list_one: list
     :param list_two: list
@@ -43,8 +43,8 @@ def merge_two_lists(list_one, list_two):
 
 def find_median(list_one, list_two):
     """
-    Function merge two lists: list_one and list_two in sorted order into sorted_list,
-    when find median in sorted_list.
+    Function merge two lists in sorted order into sorted list,
+    and whem find median in sorted list.
     :param list_one: list
     :param list_two: list
     :return: float
@@ -84,6 +84,18 @@ def main():
     list_one = [1, 2, 3, 4]
     list_two = [1, 4, 5, 6]
 
+    file_name = "median_input.txt"
+
+    # Check that file exist
+    try:
+        with open(file_name) as file:
+            list_one = file.readline().split(",")
+            list_two = file.readline().split(",")
+    except FileNotFoundError:
+        print("File '{}' doesn't exist, using default arrays ".format(file_name))
+
+    list_one = list(map(int, list_one))
+    list_two = list(map(int, list_two))
     print(list_one)
     print(list_two)
     print("The correct result: 3.5, my result: {}".format(find_median(list_one, list_two)))
