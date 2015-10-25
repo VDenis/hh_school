@@ -3,11 +3,9 @@ from math import log2
 __author__ = 'Denis'
 
 
-# TODO refactoring
-
 def find_count_conversions(n, m):
     """
-    Function count number of conversions. From n -> {(1), 2) or 3)} -> m
+    Function count number of conversions. From n -> {1), 2) or 3)} -> m
     1) n -> n + 1
     2) n -> n + 2
     3) n -> 2n
@@ -20,11 +18,9 @@ def find_count_conversions(n, m):
         coeff2 = int((m - pow(2, coeff1) * n) / 2) = 10
         coeff3 = int((m - pow(2, coeff1) * n) % 2) = 1
 
-
     0 <= n <= m <= 10 ^ 15
-    :param n: int
-    :param m: int
-    :return: int
+
+    :rtype: int
     """
 
     if not (0 <= n <= m <= pow(10, 15)):
@@ -60,7 +56,6 @@ def main():
 
     file_name = "conversion_input.txt"
 
-    # Check that file exist
     try:
         with open(file_name) as file:
             input_str = file.readline().split(",")
@@ -72,7 +67,7 @@ def main():
 
     print("n = {}".format(n))
     print("m = {}".format(m))
-    print("The correct result: 3, my result: {}".format(find_count_conversions(n, m)))
+    print("The length of the shortest sequence of transformations: {}".format(find_count_conversions(n, m)))
     print("Done")
 
 
